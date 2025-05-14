@@ -1,0 +1,6 @@
+ahnes
+
+admin: ajl118@Senai
+computador: ianes118
+maquina virtual: Senai@134
+senha wifi: Senai@118

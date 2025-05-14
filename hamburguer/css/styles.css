@@ -1,0 +1,87 @@
+/* Define variáveis CSS globais (cores e velocidade do menu) */
+:root {
+  --primary-color: rgba(13, 110, 139, 0.75); /* Cor principal do tema */
+  --secondary-color: rgba(229, 148, 0, 0.9); /* Cor secundária usada em destaque */
+  --overlay-color: rgba(24, 39, 51, 0.85);   /* Cor da sobreposição (menu) */
+  --menu-speed: 0.75s;                       /* Tempo da transição do menu */
+}
+
+/* Remove margens e paddings padrão e define box-sizing como border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define fonte e altura de linha padrão para o corpo da página */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+}
+
+/* Estiliza contêiner centralizado com largura máxima e padding */
+.container {
+  max-width: 960px;
+  margin: auto;               /* Centraliza horizontalmente */
+  overflow: hidden;           /* Esconde conteúdo que ultrapassa */
+  padding: 0 3rem;            /* Espaçamento interno nas laterais */
+}
+
+/* Área principal de destaque (hero section) */
+#showcase {
+  background: var(--primary-color); /* Cor de fundo usando a variável */
+  color: #fff;                      /* Texto branco */
+  height: 100vh;                    /* Altura de 100% da tela */
+  position: relative;              /* Necessário para o pseudo-elemento abaixo */
+}
+
+/* Imagem de fundo sobreposta usando pseudo-elemento */
+#showcase:before {
+  content: "";                                            /* Elemento vazio */
+  background: url("../img/showcase.jpg") no-repeat center center/cover;
+  position: absolute;                                     /* Posiciona sobre o showcase */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;                                             /* Fica atrás do conteúdo */
+}
+
+/* Estiliza o conteúdo interno do showcase */
+#showcase .showcase-container {
+  display: flex;                  /* Usa flexbox */
+  flex-direction: column;        /* Elementos em coluna */
+  align-items: center;           /* Centraliza horizontalmente */
+  justify-content: center;       /* Centraliza verticalmente */
+  text-align: center;            /* Texto centralizado */
+  height: 100%;                  /* Ocupa toda a altura do showcase */
+}
+
+/* Título principal */
+#showcase h1 {
+  font-size: 4rem;               /* Tamanho grande para destaque */
+}
+
+/* Parágrafo do destaque */
+#showcase p {
+  font-size: 1.3rem;             /* Tamanho médio */
+}
+
+/* Botão de ação */
+.btn {
+  display: inline-block;                         /* Permite usar paddings e margins */
+  border: none;                                  /* Sem borda */
+  background: var(--primary-color);              /* Usa a cor primária */
+  opacity: 1;
+  color: #fff;                                   /* Texto branco */
+  padding: 0.75rem 1.5rem;                       /* Espaçamento interno */
+  margin-top: 1rem;                              /* Espaço acima do botão */
+  text-decoration: none;                         /* Remove sublinhado */
+  transition: opacity 0.3s ease-in-out;          /* Transição suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.btn:hover {
+  opacity: 0.7; /* Torna o botão um pouco mais transparente */
+}
+

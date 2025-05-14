@@ -1,0 +1,161 @@
+/* Define a posição fixa do menu no canto superior esquerdo da tela */
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Garante que fique acima de outros elementos */
+}
+
+/* Estiliza o checkbox invisível que controla a abertura do menu */
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Fica acima do botão hamburguer */
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0; /* Esconde visualmente */
+}
+
+/* Estiliza o botão de menu hamburguer (as 3 linhas) */
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: var(--primary-color); /* Cor de fundo definida em :root */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Linha central do hamburguer */
+.menu-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease; /* Suaviza a rotação */
+}
+
+/* Linhas superior e inferior do hamburguer */
+.menu-wrap .hamburger > div::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit; /* Mesma cor da linha central */
+}
+
+.menu-wrap .hamburger > div::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+/* Animação para transformar as 3 linhas em um "X" quando o checkbox está marcado */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Une as linhas superior e inferior no meio, formando um "X" */
+.menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Muda a cor e o ângulo ao passar o mouse enquanto estiver aberto */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  background: var(--secondary-color);
+  transform: rotate(225deg);
+}
+
+/* Exibe o menu quando o checkbox está marcado */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+/* Faz o menu expandir com animação */
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition: var(--menu-speed);
+}
+
+/* Torna o conteúdo do menu visível com transição */
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+
+/* Estilo base do menu (posição e visibilidade) */
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden; /* Oculta por padrão */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Círculo gigante de fundo que se expande para cobrir a tela */
+.menu-wrap .menu > div {
+  background: var(--overlay-color); /* Cor do fundo do menu */
+  border-radius: 50%; /* Formato circular */
+  width: 500vw;
+  height: 500vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0); /* Começa invisível */
+  transition: all 0.4s ease;
+}
+
+/* Conteúdo interno do menu */
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.4s ease;
+}
+
+/* Estiliza os itens da lista do menu */
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+/* Estilo dos links do menu */
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit; /* Mesma cor do item */
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+/* Muda a cor do link ao passar o mouse */
+.menu-wrap .menu > div > div > ul > li > a:hover {
+  color: var(--secondary-color);
+}
+
