@@ -8,6 +8,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
+    height: 100vh;
 }
 
 .background {
@@ -33,7 +34,6 @@ body {
 .conteudo {
     text-align: center;
     z-index: 1;
-
 }
 
 .conteudo h1{
@@ -52,11 +52,11 @@ body {
 .leia-mais {
     padding: 10px 20px;
     border: none;
-    background-color: green;
+    background: green;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
     border-radius: 5px;
     font-size: 1.3rem;
     margin-top: 25px;
@@ -75,4 +75,84 @@ body {
 
 #menu-toggle {
     display: none;
+}
+
+.menu-icon {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+    cursor: pointer;
+    position: relative;
+}
+
+.linha {
+    height: 4px;
+    background-color: red;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* estilos menu */
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 147, 1, 0.9);
+    z-index: 2;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+}
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: white;
+}
+
+/* animations */
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(1) {
+    transform: rotate(45deg) translate(13px, 13px);
+}
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .menu-icon .linha:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+#menu-toggle:checked ~ .overlay {
+  transform: scale(1);
 }
