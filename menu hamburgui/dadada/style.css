@@ -1,0 +1,56 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+.menu-rap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.hamburguer-label{
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+.cabeçalho{
+    width: 1361px;
+    height: 180px;
+}
+.logo{
+    transform: scale(0.7,0.7);
+    padding: 20px;
+}
+.linhacab{
+    width: 1361px;
+    height: 2px;
+    background-color: white;
+}
+.linha{
+    background-color: white;
+    width: 45px;
+    height: 2px;
+    border-radius: 20%;
+}
+#hamburguer-input{
+    display: none;
+}
+.hamburguer{
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    top: 60px;
+    left: 1270px;
+}
