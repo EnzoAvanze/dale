@@ -1,0 +1,289 @@
+body {
+    background-color: rgb(218, 215, 215);
+    align-items: center;
+}
+.celular{
+    height: 550px;
+    width: 300px;
+    background-color: white;
+    position: absolute;
+    left: 38%;
+    align-items: center;
+}
+/* #4A8FCB  azul mei escuro */
+.avatar{
+    height: 130px;
+    width: 130px;
+    background-color: black;
+    position: absolute;
+    left: 85px;
+    top: 50px;
+    border-radius: 50%;
+    z-index: 2;
+}
+.datapesoaltura{
+    height: 20px;
+    width: 80px;
+    background-color: black;
+    position: absolute;
+    display: flex;
+    
+}
+.firstpage{
+    opacity: 0;
+}
+/* #70CBD7 AZUL CLARIN */
+.navbar{
+    height: 35px;
+    width: 100%;
+    background-color: #4A8FCB;
+    position: absolute;
+    display: flex;
+    align-content: center;
+    bottom: 0%;
+}
+.historiconavbar{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 10px;
+}
+.historiconavbarimagem{
+    height: 55%;
+    width: 55%;
+    top: 6px;
+    left: 8px;
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+}
+.historiconavbartext{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    font-size: 6px;
+    left: 6px;
+    top: 25px;
+}
+.historylabel{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 0px;
+}
+#history{
+    opacity: 0;
+}
+#history:checked + .historylabel .historiconavbarimagem{
+    background-color: white;
+}
+#history:checked ~ .firstpage{
+    opacity: 1;
+}
+
+/* Metanessabomba */
+
+.metanavbar{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 65px;
+}
+.metanavbarimagem{
+    height: 55%;
+    width: 55%;
+    top: 6px;
+    left: 8px;
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+}
+.metanavbartext{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    font-size: 6px;
+    left: 11px;
+    top: 25px;
+}
+.metalabel{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 0px;
+}
+#Meta{
+    opacity: 0;
+}
+#Meta:checked{
+    opacity: 0;
+}
+#Meta:checked + .metalabel .metanavbarimagem{
+    background-color: white;
+}
+
+/* Diarionessabomba */
+
+.diarionavbar{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 125px;
+}
+.diarionavbarimagem{
+    height: 60%;
+    width: 60%;
+    top: 4px;
+    left: 7px;
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+}
+.diarionavbartext{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    font-size: 6px;
+    left: 11px;
+    top: 26px;
+}
+.diariolabel{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 0px;
+}
+#Diario{
+    opacity: 0;
+}
+#Diario:checked{
+    opacity: 0;
+}
+#Diario:checked + .diariolabel .diarionavbarimagem{
+    background-color: white;
+}
+
+/* Dietanessabomba */
+
+.dietanavbar{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 190px;
+}
+.dietanavbarimagem{
+    height: 60%;
+    width: 60%;
+    top: 4px;
+    left: 7px;
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+}
+.dietanavbartext{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    font-size: 6px;
+    left: 9px;
+    top: 26px;
+}
+.dietalabel{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 0px;
+}
+#Dieta{
+    opacity: 0;
+}
+#Dieta:checked{
+    opacity: 0;
+}
+#Dieta:checked + .dietalabel .dietanavbarimagem{
+    background-color: white;
+}
+
+/* Amigosnessabomba */
+
+.amigosnavbar{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 250px;
+}
+.amigosnavbarimagem{
+    height: 60%;
+    width: 60%;
+    top: 4px;
+    left: 7px;
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+}
+.amigosnavbartext{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    font-size: 6px;
+    left: 9px;
+    top: 26px;
+}
+.amigoslabel{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 0px;
+}
+#Amigos{
+    opacity: 0;
+}
+#Amigos:checked{
+    opacity: 0;
+}
+#Amigos:checked + .amigoslabel .amigosnavbarimagem{
+    background-color: white;
+}
+
+.quintapage{
+    height: 515px;
+    width: 300px;
+    background-color: white;
+    position: absolute;
+    left: 0%;
+    align-items: center;
+}
+.butaolabel{
+    height: 40px;
+    width: 40px;
+    background-color: #4A8FCB;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+#butao{
+    opacity: 0;
+}
+#butao:checked + .atv{
+    opacity: 1;
+}
+.Imagem{
+    height: 30px;
+    width: 30px;
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+    z-index: 5;
+}
+.atv{
+    height: 100px;
+    width: 120px;
+    background-color: #4A8FCB;
+    text-align: center;
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+    opacity: 1;
+}
